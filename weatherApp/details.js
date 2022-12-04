@@ -1,5 +1,7 @@
 const city_name = location.search.split("city=")[1];
 // get elements fron html file
+const body= document.getElementById('body');
+const container= document.getElementById('container');
 const cityName = document.getElementById("city-name");
 const date = document.getElementById("date");
 const degree = document.getElementById("now");
@@ -34,16 +36,22 @@ async function result(id) {
   }
 }
 // display date
-function today(d){
-    let year=d.getFullYear();
-    let month=d.getMonth();
-    let day=d.getDate();
-    let hour = d.getHours();
-    let minute = d.getMinutes();
-    let second = d.getSeconds();
-    date.innerText=`${year}:${month}:${day}  /  ${hour}:${minute}:${second}`
+function today(d) {
+  let year = d.getFullYear();
+  let month = d.getMonth();
+  let day = d.getDate();
+  let hour = d.getHours();
+  let minute = d.getMinutes();
+  let second = d.getSeconds();
+  date.innerText = `${year}:${month}:${day}  /  ${hour}:${minute}:${second}`;
+  // change background image
+  if(hour>17){
+    body.style.backgroundImage= "url('assets/images/night.jpg')";
+  }else{
+    body.style.backgroundImage= "url('assets/images/day.jpg')";
+  }
 }
-today(new Date())
+today(new Date());
 
 // display results in page
 function showResult(data) {
@@ -84,23 +92,22 @@ function showHourly(data) {
     celcius.push(temp);
     houres.push(+item.dt_txt.split(" ")[1].split(":")[0]);
   });
-  
 
   let xValues = houres;
   let yValues = celcius;
-  console.log(yValues)
+  console.log(yValues);
   let minY = yValues[0];
-  let maxY=yValues[0];
-//   find min and max values of degree
+  let maxY = yValues[0];
+  //   find min and max values of degree
   yValues.forEach((item) => {
-    if(item<minY){
-        minY=item;
+    if (item < minY) {
+      minY = item;
     }
-    if(item>maxY){
-        maxY=item;
+    if (item > maxY) {
+      maxY = item;
     }
   });
-// create linear chart
+  // create linear chart
   new Chart("myChart", {
     type: "line",
     data: {
@@ -118,7 +125,7 @@ function showHourly(data) {
     options: {
       legend: { display: false },
       scales: {
-        yAxes: [{ ticks: { min: minY-1, max: maxY+1 } }],
+        yAxes: [{ ticks: { min: minY - 1, max: maxY + 1 } }],
       },
     },
   });
