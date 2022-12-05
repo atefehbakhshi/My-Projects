@@ -33,7 +33,7 @@ async function result(id) {
     let res = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?id=${id}&appid=9946cff79fed3fdf4faac05260fe5762`
     );
-    let data = await res.json();
+    const data = await res.json();
     showHourly(data);
     return data;
   } catch (error) {
@@ -42,12 +42,12 @@ async function result(id) {
 }
 // display date
 function today(d) {
-  let year = d.getFullYear();
-  let month = d.getMonth();
-  let day = d.getDate();
-  let hour = d.getHours();
-  let minute = d.getMinutes();
-  let second = d.getSeconds();
+  const year = d.getFullYear();
+  const month = d.getMonth();
+  const day = d.getDate();
+  const hour = d.getHours();
+  const minute = d.getMinutes();
+  const second = d.getSeconds();
   date.innerText = `${year}:${month}:${day}  /  ${hour}:${minute}:${second}`;
   // change background image
   if (hour > 17) {
