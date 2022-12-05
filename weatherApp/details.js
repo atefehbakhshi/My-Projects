@@ -9,6 +9,7 @@ const minDegree = document.getElementById("min");
 const maxDegree = document.getElementById("max");
 const weatherCondithin = document.getElementById("weather");
 const weatherIcon = document.getElementById("weather-icon");
+const hourlyTitle = document.getElementById("hourly-title");
 // get information from api by city name
 async function gettingCityName(city) {
   try {
@@ -16,8 +17,12 @@ async function gettingCityName(city) {
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=9946cff79fed3fdf4faac05260fe5762`
     );
     let data = await res.json();
-    showResult(data);
-    result(data.id);
+    if (data.cod === "404") {
+      cityName.innerText = data.message;
+    } else {
+      showResult(data);
+      result(data.id);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -55,38 +60,35 @@ today(new Date());
 
 // display results in page
 function showResult(data) {
-  if (data.cod === "404") {
-    cityName.innerText = data.message;
-  } else {
-    cityName.innerText = data.name;
-    degree.innerText = data.main.temp;
-    minDegree.innerText = data.main.temp_min;
-    maxDegree.innerText = data.main.temp_max;
-    const weather = data.weather[0].main;
+  cityName.innerText = data.name;
+  degree.innerText = data.main.temp;
+  minDegree.innerText = data.main.temp_min;
+  maxDegree.innerText = data.main.temp_max;
+  const weather = data.weather[0].main;
 
-    if (weather === "Clear") {
-      weatherIcon.src = `./assets/images/clear.png`;
-      weatherCondithin.innerText = "Clear";
-    } else if (weather === "Clouds") {
-      weatherIcon.src = `./assets/images/cloudy.png`;
-      weatherCondithin.innerText = "Cloudy";
-    } else if (weather === "Rain") {
-      weatherIcon.src = `./assets/images/rainy.png`;
-      weatherCondithin.innerText = "Rainy";
-    } else if (weather === "Snow") {
-      weatherIcon.src = `./assets/images/snowy.png`;
-      weatherCondithin.innerText = "Snowy";
-    } else if (weather === "Mist") {
-      weatherIcon.src = `./assets/images/mist.png`;
-      weatherCondithin.innerText = "Mist";
-    } else {
-      weatherIcon.src = `./assets/images/semi-cloudy.png`;
-      weatherCondithin.innerText = weather;
-    }
+  if (weather === "Clear") {
+    weatherIcon.src = `./assets/images/clear.png`;
+    weatherCondithin.innerText = "Clear";
+  } else if (weather === "Clouds") {
+    weatherIcon.src = `./assets/images/cloudy.png`;
+    weatherCondithin.innerText = "Cloudy";
+  } else if (weather === "Rain") {
+    weatherIcon.src = `./assets/images/rainy.png`;
+    weatherCondithin.innerText = "Rainy";
+  } else if (weather === "Snow") {
+    weatherIcon.src = `./assets/images/snowy.png`;
+    weatherCondithin.innerText = "Snowy";
+  } else if (weather === "Mist") {
+    weatherIcon.src = `./assets/images/mist.png`;
+    weatherCondithin.innerText = "Mist";
+  } else {
+    weatherIcon.src = `./assets/images/semi-cloudy.png`;
+    weatherCondithin.innerText = weather;
   }
 }
 // display hourly degree
 function showHourly(data) {
+  hourlyTitle.innerText = "Hourly";
   const [first, second, third, four, five, six, others] = data.list;
   let kelvin = [first, second, third, four, five, six, others];
   let celcius = [];
@@ -99,10 +101,9 @@ function showHourly(data) {
 
   let xValues = houres;
   let yValues = celcius;
-  console.log(yValues);
   let minY = yValues[0];
   let maxY = yValues[0];
-  //   find min and max values of degree
+  // find min and max values of degree
   yValues.forEach((item) => {
     if (item < minY) {
       minY = item;
