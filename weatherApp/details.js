@@ -1,7 +1,7 @@
 const city_name = location.search.split("city=")[1];
 // get elements fron html file
-const body= document.getElementById('body');
-const container= document.getElementById('container');
+const body = document.getElementById("body");
+const container = document.getElementById("container");
 const cityName = document.getElementById("city-name");
 const date = document.getElementById("date");
 const degree = document.getElementById("now");
@@ -19,7 +19,7 @@ async function gettingCityName(city) {
     showResult(data);
     result(data.id);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 // get information from api by id
@@ -45,40 +45,44 @@ function today(d) {
   let second = d.getSeconds();
   date.innerText = `${year}:${month}:${day}  /  ${hour}:${minute}:${second}`;
   // change background image
-  if(hour>17){
-    body.style.backgroundImage= "url('assets/images/night.jpg')";
-  }else{
-    body.style.backgroundImage= "url('assets/images/day.jpg')";
+  if (hour > 17) {
+    body.style.backgroundImage = "url('assets/images/night.jpg')";
+  } else {
+    body.style.backgroundImage = "url('assets/images/day.jpg')";
   }
 }
 today(new Date());
 
 // display results in page
 function showResult(data) {
-  cityName.innerText = data.name;
-  degree.innerText = data.main.temp;
-  minDegree.innerText = data.main.temp_min;
-  maxDegree.innerText = data.main.temp_max;
-  const weather = data.weather[0].main;
-
-  if (weather === "Clear") {
-    weatherIcon.src = `./assets/images/clear.png`;
-    weatherCondithin.innerText = "Clear";
-  } else if (weather === "Clouds") {
-    weatherIcon.src = `./assets/images/cloudy.png`;
-    weatherCondithin.innerText = "Cloudy";
-  } else if (weather === "Rain") {
-    weatherIcon.src = `./assets/images/rainy.png`;
-    weatherCondithin.innerText = "Rainy";
-  } else if (weather === "Snow") {
-    weatherIcon.src = `./assets/images/snowy.png`;
-    weatherCondithin.innerText = "Snowy";
-  } else if (weather === "Mist") {
-    weatherIcon.src = `./assets/images/mist.png`;
-    weatherCondithin.innerText = "Mist";
+  if (data.cod === "404") {
+    cityName.innerText = data.message;
   } else {
-    weatherIcon.src = `./assets/images/semi-cloudy.png`;
-    weatherCondithin.innerText = weather;
+    cityName.innerText = data.name;
+    degree.innerText = data.main.temp;
+    minDegree.innerText = data.main.temp_min;
+    maxDegree.innerText = data.main.temp_max;
+    const weather = data.weather[0].main;
+
+    if (weather === "Clear") {
+      weatherIcon.src = `./assets/images/clear.png`;
+      weatherCondithin.innerText = "Clear";
+    } else if (weather === "Clouds") {
+      weatherIcon.src = `./assets/images/cloudy.png`;
+      weatherCondithin.innerText = "Cloudy";
+    } else if (weather === "Rain") {
+      weatherIcon.src = `./assets/images/rainy.png`;
+      weatherCondithin.innerText = "Rainy";
+    } else if (weather === "Snow") {
+      weatherIcon.src = `./assets/images/snowy.png`;
+      weatherCondithin.innerText = "Snowy";
+    } else if (weather === "Mist") {
+      weatherIcon.src = `./assets/images/mist.png`;
+      weatherCondithin.innerText = "Mist";
+    } else {
+      weatherIcon.src = `./assets/images/semi-cloudy.png`;
+      weatherCondithin.innerText = weather;
+    }
   }
 }
 // display hourly degree
