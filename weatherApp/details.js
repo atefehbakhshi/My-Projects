@@ -56,7 +56,10 @@ function today(d) {
     body.style.backgroundImage = "url('assets/images/day.jpg')";
   }
 }
-today(new Date());
+// dynamic clock
+setInterval(() => {
+  today(new Date());
+}, 1000);
 
 // display results in page
 function showResult(data) {
