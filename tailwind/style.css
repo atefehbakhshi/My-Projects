@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.costumshadow{
+    box-shadow: 0 6px 13px 0 rgb(0 0 0 / 6%);
+}
+
+@font-face {
+    font-family: 'Yekan';
+    src: url('assets/fonts/Yekan.woff');
+}
+.font-yekan{
+    font-family: 'yekan';
+}
+
+
+/* ----------------test */
+.rounddd{
+    /* background-color: #fff; */
+    border-radius: 16px;
+}
