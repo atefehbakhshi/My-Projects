@@ -14,22 +14,170 @@
   </head>
   <body>
     <header
-      class="fixed top-0 w-full flex justify-between items-center p-5 text-base font-medium costumshadow"
+      class="fixed bg-white top-0 w-full z-50 flex justify-between items-center p-5 text-base font-medium costumshadow"
     >
       <div class="flex flex-row items-center">
         <span class="material-symbols-outlined sm:hidden"> menu </span>
         <nav class="hidden font-yekan sm:flex">
-            <ul class="flex items-center gap-4">
-                <li  class="rounded-3xl py-1.5 px-3.5 text-white bg-[#3094ea] "><a>باز کردن حساب</a></li>
-                <li class="text-[#737789]"><a href="#">درباره ما</a></li>
-                <li class="text-[#737789]"><a href="#">بلاگ</a></li>
-                <li class="text-[#737789]"><a href="#">سوالات متداول</a></li>
-                <li class="text-[#737789]"><a href="#">موقعیت شغلی</a></li>
-                <li class="text-[#737789]"><a href="#">بلوجونیور</a></li>
-              </ul>
+          <ul class="flex items-center gap-4">
+            <li class="rounded-3xl py-1.5 px-3.5 text-white bg-[#3094ea]">
+              <a>باز کردن حساب</a>
+            </li>
+            <li class="text-[#737789]"><a href="#">درباره ما</a></li>
+            <li class="text-[#737789]"><a href="#">بلاگ</a></li>
+            <li class="text-[#737789]"><a href="#">سوالات متداول</a></li>
+            <li class="text-[#737789]"><a href="#">موقعیت شغلی</a></li>
+            <li class="text-[#737789]"><a href="#">بلوجونیور</a></li>
+          </ul>
         </nav>
       </div>
-      <img src="./assets/images/logo.png" alt="bluebanck" />
+      <img src="./assets/images/logo.png" alt="blu bank" />
     </header>
+    <div class="w-full mt-32 flex justify-center">
+      <img
+        src="./assets/images/hero.png"
+        alt="blu bank"
+        class="rounded-2xl mx-auto w-3/4 sm:w-11/12"
+      />
+    </div>
+    <section
+      class="mt-16 py-28 grid grid-cols-12 justify-items-center container mx-auto" id="home"
+    >
+      <div class="col-span-12 md:col-span-4">
+        <img src="./assets/images/section1.png" alt="blu bank" />
+      </div>
+      <div class="col-span-12 md:col-span-8 self-center">
+        <!-- SLIDER -->
+        <div class="slider-container">
+          <!-- BUTTONS -->
+          <input
+            type="radio"
+            name="slider"
+            id="slide-1-trigger"
+            class="trigger"
+            checked
+          />
+          <label class="btn" for="slide-1-trigger"></label>
+          <input
+            type="radio"
+            name="slider"
+            id="slide-2-trigger"
+            class="trigger"
+          />
+          <label class="btn" for="slide-2-trigger"></label>
+          <input
+            type="radio"
+            name="slider"
+            id="slide-3-trigger"
+            class="trigger"
+          />
+          <label class="btn" for="slide-3-trigger"></label>
+
+          <!-- SLIDES -->
+          <div class="slide-wrapper">
+            <div id="slide-role">
+              <div class="slide slide-1">
+                <h1 class="m-4 text-3xl text-[#3094ea] font-bold font-yekan">
+                  حفاظت از سرمایه مشتریان
+                </h1>
+                <ul>
+                  <li class="text-xs font-normal leading-9 font-yekan after">
+                    <i></i>
+                    مبالغ سپرده های مشتریان در چارچوب ضوابط قانونی و تا سقف
+                    قانونی تعیین شده، مورد تضمین صندوق ضمانت سپزده های بانک
+                    مرکزی است.
+                  </li>
+                  <li class="text-xs font-normal leading-9 font-yekan">
+                    <i></i>
+                    ما همه اطلاعات حساب ها و مدارک هویتی مشتریان خود را محرمانه
+                    تلقی کرده و متعهد می شویم تحت هر شرایطی جز در موارد قانونی
+                    از انتشار آن جلوگیری کرده و مسئولیت این موضوع را به طور کامل
+                    می پذیریم.
+                  </li>
+                </ul>
+              </div>
+              <div class="slide slide-2 grid grid-cols-12 gap-3">
+                <div
+                  class="col-span-12 flex flex-col items-center md:col-span-4"
+                >
+                  <img
+                    src="./assets/images/percent.png"
+                    alt="blu bank"
+                    class="mb-4"
+                  />
+                  <div class="bg-[#ebf4fc] rounded-2xl py-6 text-center">
+                    <h4 class="text-sm mb-4 font-semibold">
+                      10 درصد سود سپرده
+                    </h4>
+                    <p class="text-sm text-[#3094ea] px-4 font-medium">
+                      در بلوبانک برای حداقل مانده موجودی در ماه، سود سالیانه 10
+                      درصد به صورت ماه شمار پرداخت می شود.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="col-span-12 flex flex-col items-center md:col-span-4"
+                >
+                  <img
+                    src="./assets/images/novideo.png"
+                    alt="blu bank"
+                    class="mb-4"
+                  />
+                  <div class="bg-[#ebf4fc] rounded-2xl py-6 text-center">
+                    <h4 class="text-sm mb-4 font-semibold">
+                      10 درصد سود سپرده
+                    </h4>
+                    <p class="text-sm text-[#3094ea] px-4 font-medium">
+                      در بلوبانک برای حداقل مانده موجودی در ماه، سود سالیانه 10
+                      درصد به صورت ماه شمار پرداخت می شود.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="col-span-12 flex flex-col items-center md:col-span-4"
+                >
+                  <img
+                    src="./assets/images/video.png"
+                    alt="blu bank"
+                    class="mb-4"
+                  />
+                  <div class="bg-[#ebf4fc] rounded-2xl py-6 text-center">
+                    <h4 class="text-sm mb-4 font-semibold">
+                      10 درصد سود سپرده
+                    </h4>
+                    <p class="text-sm text-[#3094ea] px-4 font-medium">
+                      در بلوبانک برای حداقل مانده موجودی در ماه، سود سالیانه 10
+                      درصد به صورت ماه شمار پرداخت می شود.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slide slide-3">
+                <h1 class="my-4 text-3xl text-[#3094ea] font-bold font-yekan">
+                  بلو، بانک ولی دوست داشتنی
+                </h1>
+                <p class="text-xs font-normal leading-9 font-yekan after my-9">
+                  بانکی تمام دیجیتال است که همه ی عملیات بانکداری روی اپلیکیشن
+                  موبایل کاملا آنلاین انجام می شود. به زبان ساده، بلو بانکی است
+                  که همیشه همراه شما خواهد بود
+                </p>
+                <div class="w-full flex justify-center">
+                  <div
+                    class="flex justify-center mx-auto bg-[#3094ea] rounded-[50px] py-2 px-3 text-white cursor-pointer"
+                  >
+                    <span class="material-symbols-outlined"> download </span>
+                    <button>دانلود اپلیکیشن</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
   </body>
 </html>
