@@ -34,6 +34,7 @@ body {
   background-color: rgba(235, 235, 235, 0.846);
   box-shadow: 10px 10px 5px #aaaaaa;
   border-radius: 15px;
+  text-decoration: none;
 }
 @media (min-width: 768px) {
   .select {
