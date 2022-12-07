@@ -123,13 +123,22 @@ input[type="radio"]:checked + label.btn {
 }
 
 /* list style */
-i{
+#home i{
   background-color: #4b94ea;
   font-size: 18px;
   height: 3px;
   margin-top: 18px;
   position: absolute;
   right: 0;
-  transform: translateY(-50%);
+  width: 10px;
+}
+#cards i{
+  background-color: #4b94ea;
+  font-size: 18px;
+  height: 3px;
+  margin-top: 18px;
+  position: absolute;
+  right: -1em;
+  /* margin-right: -1.5em; */
   width: 10px;
 }
