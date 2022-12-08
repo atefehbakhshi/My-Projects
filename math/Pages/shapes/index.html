@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Shapes</title>
-</head>
-<body>
-    <p>shapes</p>
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <div id="shapes-container">
+        <select name="shapes" id="shape">
+          <option value="rectangular">Rectangular</option>
+          <option value="square">Square</option>
+          <option value="circle">Circle</option>
+          <option value="cylinder">Cylinder</option>
+        </select>
+        <div id="inputs">
+          <div>
+            <label for="radius">Radius:</label>
+            <input class="input" type="number" id="radius" />
+          </div>
+          <div>
+            <label for="width">Width:</label>
+            <input class="input" type="number" id="width" />
+          </div>
+          <div>
+            <label for="height">Height:</label>
+            <input class="input" type="number" id="height" />
+          </div>
+        </div>
+        <hr />
+        <div id="results">
+          <div>
+            <p>Permeter:</p>
+            <span id="permeter"></span>
+          </div>
+          <div>
+            <p>Area:</p>
+            <span id="area"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
