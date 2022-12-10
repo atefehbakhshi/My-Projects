@@ -1,0 +1,76 @@
+body {
+  background-image: url("../../assets/images/charts.png");
+}
+#charts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+  background-color: white;
+  box-shadow: 10px 10px 15px #aaaaaa;
+  border-radius: 15px;
+  color: #4c4c4c;
+}
+input {
+  margin: 1em 0;
+  padding: 0.25em;
+  border-radius: 5px;
+  border: 1px solid #4c4c4c;
+  outline: none;
+}
+label {
+  padding: 0.25em;
+}
+hr {
+  background-color: #4c4c4c;
+}
+#chart {
+  padding: 0.5em;
+  border-radius: 5px;
+  color: #4c4c4c;
+  outline: none;
+}
+#inputs,
+#result {
+  margin: 2em 0;
+}
+#inputs span {
+  font-weight: bolder;
+  font-size: 18px;
+}
+#notif {
+  margin: 1em 0;
+}
+#line {
+  display: block;
+}
+#lineargraphs {
+  display: none;
+}
+#barcharts {
+  display: none;
+}
+#piecharts {
+  display: none;
+}
+#draw{
+  display: flex;
+  padding: 1em 0;
+  justify-content: end;
+}
+#draw-btn{
+  padding: 0.5em 1em;
+  border: none;
+  background-color: #86a7d0;
+  color: #fff;
+  border-radius: 5px;
+}
+#draw-btn:hover{
+  background-color: #6784a7;
+}
+
+@media (min-width: 768px) {
+  #charts-container {
+    max-width: 30em;
+  }
+}

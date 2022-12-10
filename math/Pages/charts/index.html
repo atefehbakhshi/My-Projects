@@ -1,13 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <title>Charts</title>
-</head>
-<body>
-        <p>charts</p>
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <div id="charts-container">
+        <select name="charts" id="chart">
+          <option value="line">Line</option>
+          <option value="lineargraphs">Linear Graphs</option>
+          <option value="barcharts">Bar Charts</option>
+          <option value="piecharts">Pie Charts</option>
+        </select>
+        <div id="inputs">
+          <div id="line">
+            <p id="notif">
+              Please put
+              <span>colon</span>
+              between numbers
+            </p>
+            <div>
+              <label for="line-x-axes">X values:</label>
+              <input  type="text" id="line-x-axes" />
+            </div>
+            <div>
+              <label for="line-y-axes">Y values:</label>
+              <input  type="text" id="line-y-axes" />
+            </div>
+          </div>
+          <div id="lineargraphs">
+            <p>A * x + B</p>
+            <p id="notif">
+              Please put
+              <span>colon</span>
+              between numbers
+            </p>
+            <div>
+              <label for="lineargraphs-x-axes">X values:</label>
+              <input  type="text" id="lineargraphs-x-axes" />
+            </div>
+            <div>
+              <label for="a">A value:</label>
+              <input type="text" id="a" />
+            </div>
+            <div>
+              <label for="a">B value:</label>
+              <input type="text" id="b" />
+            </div>
+          </div>
+          <div id="barcharts">
+            <p id="notif">
+              Please put
+              <span>colon</span>
+              between numbers
+            </p>
+            <div>
+              <label for="barcharts-x-axes">X values:</label>
+              <input  type="text" id="barcharts-x-axes" />
+            </div>
+            <div>
+              <label for="barcharts-y-axes">Y value:</label>
+              <input type="text" id="barcharts-y-axes" />
+            </div>
+            <div>
+              <label for="barcharts-color">Bar colors</label>
+              <input type="text" id="barcharts-color" />
+            </div>
+          </div>
+
+          <div id="piecharts">
+            <p id="notif">
+              Please put
+              <span>colon</span>
+              between numbers
+            </p>
+            <div>
+              <label for="piecharts-x-axes">X values:</label>
+              <input  type="text" id="piecharts-x-axes" />
+            </div>
+            <div>
+              <label for="piecharts-y-axes">Y value:</label>
+              <input type="text" id="piecharts-y-axes" />
+            </div>
+            <div>
+              <label for="piecharts-color">Pie colors</label>
+              <input type="text" id="piecharts-color" />
+            </div>
+          </div>
+        </div>
+        <div id="draw">
+          <button id="draw-btn">Draw</button>
+        </div>
+        <hr />
+        <canvas id="result"> </canvas>
+      </div>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
 </html>
